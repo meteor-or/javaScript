@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<title>css와의 우선 순위</title>
+<style>
+  p{color: green; font-size: 2rem;}
+  div {width:300px; height: 300px;}
+  .box1 {background-color: lightblue;}
+  .box2 {background-color: orange;}
+</style>
+</head>
+
+<body>
+  <h1>css와의 우선 순위</h1>
+  <p style="color: indianred;">자바스크립트가 css보다 우선 순위가 높다</p>
+  <p>자바스크립트로 스타일 제어시 인라인으로 적용.</p>
+  
+  <div class="box1">변경</div>
+  <div class="box2">변경</div>
+  <script>
+    document.querySelector('p').style.color = 'blue';
+
+    document.querySelector('div').classList.remove=('.box1');
+    document.querySelector('div').classList.add=('.box1');
+  </script>
+</body>
+</html>
