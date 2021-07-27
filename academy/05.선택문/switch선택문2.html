@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Switch 선택문 2</title>
+</head>
+<body>
+  <script>
+    // 검색 사이트 입력시 해당 사이트로 이동
+    let site = prompt('네이버, 구글, 다음 중 원하는 사이트를 입력하세요.')
+    let url
+
+    switch(site) {
+      case '네이버':
+        url = 'naver.com';
+      //window.location.href = 'https://www.naver.com'; // 사이트 이동
+        break;
+      case '구글':
+        url = 'google.com';
+        //window.location.href = 'https://www.google.com'; // 사이트 이동
+        break;
+      case '다음':
+        url = 'daum.net';
+        //window.location.href = 'https://www.daum.net'; // 사이트 이동
+        break;
+      default:
+        alert('제시된 사이트만 입력해 주세요.');
+        break;
+    }
+    console.log(url);
+    //새  탭으로 열기
+    if (url !== nul;){ //url 데이터 값이 있는 경우만 실행
+      window.open('about:blank').location.href = 'https://www.' + url;
+    }
+    </script>
+</body>
+</html>
