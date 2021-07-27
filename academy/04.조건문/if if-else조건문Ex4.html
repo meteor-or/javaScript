@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<title>if else-if 조건문 연습 5</title>
+</head>
+
+<body>
+<script>
+  // 90점 이상 A, 80점 이상은 B, 70점 이상은 C, 60점 이상은 D, 그 이하는 F
+  // 입력한 점수와 함께 등급 출력
+  let score = prompt('점수를 입력하세요.');
+  let grade;// 등급의 변수 선언
+
+  if(score == null) {
+    document.body.innerHTML = '<h1>입력이 취소되었습니다</h1>';
+  } else if(score >= 90 && score <= 100) {
+    //document.write(score + '점은 A입니다.');
+    grade = 'A';//위의 조건이 참인 경우 등급의 값이 대입
+  } else if(score >= 80 && score <= 89) {
+    grade = 'B';
+  } else if(score >= 70 && score <= 79) {
+    grade = 'C';
+  } else if(score >= 60 && score <= 69) {
+    grade = 'D';
+  } else {
+    grade = 'F';
+  }
+
+  if(score != null) {
+    // document.body.textContent = score + '점은 ' + grade + '입니다.';
+    document.body.innerHTML = '<h1>' + score + '점은 ' + grade + '입니다.</h1>';
+  }
+  if(score == '') {
+    document.body.innerHTML = '<h1>입력 필요</h1>';
+  }
+</script>  
+</body>
+</html>

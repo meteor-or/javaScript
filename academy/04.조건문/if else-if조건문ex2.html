@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<title>if else-if 조건문 연습2</title>
+<style></style>
+<script>
+  // 입력한 점수에 따라 상(100~81) 중(80~61) 하(60~41) 탈락 (40~0)으로 나누고 해당 점수를 알림창으로 띄우세요
+
+  let score = prompt('점수를 입력하세요');
+
+  /* if (score >= 81) {
+    alert(socre + '점으로 상입니다.')
+  } else if(score >= 61) {
+    alert(score + '점으로 중입니다.')
+  } else if(score >= 41) {
+    alert(score + '점으로 하입니다.')
+  } else {
+    alert(score + '점으로 탈락입니다.')
+  } */
+  if(score == ''){// 입력하지 않고 확인 버튼 클릭시
+    alert('숫자 좀');
+  } else if(score == null) {// 입력하지 않고 취소 버튼 클릭시
+    alert('취소했습니다.');
+  } else if (score <= 100 && score >= 81) {// 100~81
+    alert(score + '점은 "상"입니다.');
+  } else if(score <= 80 && score >= 61) {// 80~61
+    alert(score + '점은 "중"입니다.');
+  } else if(score <= 60 && score >= 41) {// 60~41
+    alert(score + '점은 "하"입니다.');
+  } else if(score <= 40 && score >= 0) {// 40~0
+    alert(score + '점은 "탈락"입니다.');
+  } else {
+    alert('점수만 입력해 주세요.');
+  }
+
+
+</script>
+</head>
+
+<body>
+
+</body>
+</html>
