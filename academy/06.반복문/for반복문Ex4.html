@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<title>for 반복문 연습 4</title>
+</head>
+
+<body>
+<script>
+  // 중첩문 for, if
+  // 1부터 100사이의 숫자 중
+  // 3의 배수이지만 7의 배수는 아닌(부정) 숫자만 출력
+  // 3,6,9,12,15,18,(21:7의배수),24 ....
+
+
+  for (let i = 1; i <= 100; i++){
+    if(i%3 == 0 && i%7 != 0) {
+      document.writeln(i);
+    }
+  }
+
+
+
+
+</script>  
+</body>
+</html>

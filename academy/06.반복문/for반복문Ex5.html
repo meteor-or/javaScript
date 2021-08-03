@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<title>연습</title>
+<style></style>
+</head>
+
+<body>
+<script>
+  // 중첩문 단:for 곱하는 숫자:for
+  // 구구단 2~9단 출력
+
+  // 내꺼
+  for(let i=2; i<=9; i++) {
+      document.writeln(i +"단 <br>")
+      for(let j=1; j<=9; j++) {
+          document.writeln(i + " * " + j + "= " + (i*j) + "<br>");
+      }
+      
+  }  
+
+  // 선생님꺼
+  let sum = 0;
+  for (let i=2; i<=9; i++) {// 2~9단
+    document.write('<h2>-- ' + i + '단 --</h2>');
+
+    for (let j=1; j<=9; j++) {// 각 단의 1~9까지의 곱하는 값
+      sum = i * j;
+      document.write(i + ' * ' + j + ' = ' + sum + '<br>');
+    }
+    
+  }
+  
+
+</script>
+</body>
+</html>

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<title>for 반복문 연습 6</title>
+</head>
+
+<body>
+<script>
+  // 입력 받은 구구단 출력
+   // 2~9단 외의 숫자를 입력시 '2~9 사이의 숫자만 작성해 주세요.'
+
+  let num = prompt('2~9까지의 숫자를 입력하세요.');
+  let sum = 0;
+
+  if(num >= 2 && num <= 9) {// 입력 받은 숫자가 2~9까지만 허용
+    document.write('<h2>--- ' + num + '단 ---</h2>');
+
+    for(let i=1; i<=9; i++) {
+      sum = num * i;
+      document.write(num + ' * ' + i + ' = ' + sum + '<br>');
+    }
+
+  } else {
+    alert('2~9 사이의 숫자만 작성해 주세요.');
+  }
+</script>
+</body>
+</html>

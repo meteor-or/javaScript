@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<title>for 반복문 2</title>
+</head>
+
+<body>
+<script>
+  // 1~10까지의 합 1+2+3+4+5+6+7+8+9+10=??
+
+  //let sum;
+  //console.log(typeof sum); undefined
+
+  let sum = 0;// 값을 대입하지 않으면 변수의 성격을 파악할 수 없기 때문에 숫자로 초기화
+
+  for (let i=1; i<=10; i++) {// 변수 i에 1을 대입하고, 1씩 증가되며, i가 10보다 작거나 같을 때까지 반복
+    /*
+    sum = sum + i;
+    i(1) : sum(1) = sum(0) + i(1)
+    i(2) : sum(3) = sum(1) + i(2)
+    i(3) : sum(6) = sum(3) + i(3)
+    i(4) : sum(10) = sum(6) + i(4) ...
+    */
+    sum += i;// sum = sum + i;
+  }
+
+  document.body.innerHTML = '<h2>1부터 10까지의 합은 ' + sum +'입니다.</h2>';
+</script>  
+</body>
+</html>
