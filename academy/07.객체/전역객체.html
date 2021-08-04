@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<title>전역 객체</title>
+<script>
+  /* 
+    전역객체:
+    모든 객체의 유일한 최상위 객체를 의미
+    window 객체(browser 쪽) / global 객체(서버 node.js 쪽)
+  */
+
+ // 브라우저
+ console.log(this === window);// ture
+
+ // 터미널
+ // node
+ // this === global // true
+
+ //window.document.getElementById('title');
+ // 전역 객체의 자식 객체를 사용할 때 전역 객체인 window 생략 가능
+ document.getElementById('title');
+ 
+ window.alert('hello JS!');
+
+ function moveTo (url) {
+  var location = {//객체 생성
+     'href' : '이동'
+  }
+  alert(location.href + url);// 사용자 생성 객체의 href 프로퍼티 + 매개변수 url
+  //location.href = url;
+  window.location.href = url;// 페이지 이동
+  /*
+  사용자 정의 이름과 전역 객체의 이름이 같은 경우,
+  윈도우 객체를 정확히 작성하여 사용
+  */
+ }
+
+ moveTo('http://google.com');
+</script>
+</head>
+
+<body>
+  
+</body>
+</html>
