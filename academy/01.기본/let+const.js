@@ -1,11 +1,13 @@
 /*
-  변수 variable
+  변수 variable (mutable)
   1. var
     - 함수 레벨 스코프 function level scope: 함수 내에서 선언된 변수는 함수 내에서만 유효.
       함수 내에서 선언되면 지역 변수, 함수 외부에서 선언되거나 키워드 생략시 전역 변수.
     - var 키워드 생략 가능
     - 변수 중복 선언 가능
     - 변수 호이스팅: 변수를 선언하기 전에 참조하는 것
+    - var hoisting (move declaration from bottom to top)
+    - has no block scope
 
   2. let
     - 블록 레벨 스코프 block level scope: {} 중괄호(함수, if문, for문, while 문...) 안에 선언된 변수는 블록 내부에서만 유효. 외부에서 참조할 수 없음.
@@ -26,12 +28,20 @@ b = 300;// 값 재할당 가능
 console.log(b);
 
 /*
-  const 상수
+  const 상수 (immutable)
+    - 변경 되지 않음
     - 재선언, 재할당 모두 불가능
     즉, 처음 선언하면 더이상 변경 할 수 없음. 다만 선언된 변수의 객체 내용은 변경 가능.
+      - security
+      - thread safety
+      - reduce human mistakes
     - 반드시 선언과 동시에 대입
     - 블록 레벨 스코프
+    
 */
 const c = 100;
 // c = 200; 에러, 재할당 불가능
-console.log(c);
+console.log(c)
+
+
+

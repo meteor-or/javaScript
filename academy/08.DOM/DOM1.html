@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<title>문서객체모델 DOM</title>
+<style>
+  .bgColor { background-color: orange; }
+  .salmon { background-color: salmon; }
+  .textDeco { color:#000; text-decoration: none; }
+  .textStyle { color:maroon; font-style:italic; }
+</style>
+</head>
+
+<body>
+  <div class="container">
+    <h1 id="title">Document Object Model</h1>
+    <ul class="gnb" data-color="num">
+      <li class="menu menu1"><a href="#">menu-1</a></li>
+      <li class="menu menu2"><a href="#">menu-2</a></li>
+      <li class="menu menu3"><a href="#">menu-3</a></li>
+      <li class="menu menu4"><a href="#">menu-4</a></li>
+    </ul>
+  </div>
+
+<script>
+  // 탐색
+  const title = document.getElementById('title');// id 특성(속성)노드 탐색 반환
+  console.log(title);
+  // className = 클래스 값을 가져 오거나 변경.
+  title.className = 'bgColor';
+  
+  // 유사 배열 형태로 반환
+  const gnb = document.getElementsByClassName('gnb')[0];// class 특성(속성) 노드 탐색 반환
+  // const ul = document.getElementsByTagName('ul')[0]; 태그(ul) 요소 노드 탐색 반환
+  gnb.className = 'salmon';
+
+  const li = document.getElementsByTagName('li');
+  // css:font-size js:fontSize
+  // margin-top -> marginTop
+  /*
+  li[0].style.fontSize = '1.5rem';
+  li[1].style.fontSize = '1.5rem';
+  li[2].style.fontSize = '1.5rem';
+  li[3].style.fontSize = '1.5rem';
+  */
+  // for .. of 반복 가능한 객체를 반복하고 각 각의 속성값에 대해 실행
+  for (let idx of li) {
+    idx.style.fontSize = '1.5rem';
+  }
+
+  // css 선택자를 이용하여 해당 노드 모두 선택. 반환은 첫번째 노드만 반환
+  const menu = document.querySelectorAll('.menu');
+  // menu.style.border = '1px solid #000';
+  menu.forEach(function(menu){
+    menu.style.listStyle = 'none';
+  }); 
+  //브라우저 종류에 따라서 문법이 조금씩 다름, 객체 선택하는게 까다로움.
+  
+  // 부모 노드 탐색
+  li[0].parentNode.style.border = '3px solid #000'
+
+  //firstChild, lastChild 자식노드
+//  gnb.firstChild.style.fontWeight = 'bold'; //적용 x 
+  //줄바꿈의 빈 공간 자체도 노드로 인식함
+  console.log(gnb.firstChild); // #text
+
+  // 자식요소 노드 탐색
+  gnb.firstElementChild.style.fontWeight = 'bold';
+  gnb.lastElementChild.style.fontWeight = 'bold';
+
+  // 형제 요소 노드탐색
+  // .previousElementSibling 기준 객체 이전 형제 노드
+  gnb.previousElementSibling.style.color = '#fff';
+  // .nextElemnetSibling 기준 객체 이후형제 노드
+  gnb.firstElementChild.style.border = 'dashed 1px #fff'
+
+  //
+  const a = document.querySelector('a'); // A
+  console.log(a.nodeName); // a
+  console.log(a.nodeType); // 1: Elemetn node
+
+  const textNode = a.firstChild;
+  console.log(textNode.nodeName); //#text
+  console.log(textNode.nodetype); // 3: #text node
+  //nodeValue 프로퍼티를 사용하여 노드 값 얻음
+  console.log(textNode.nodeValue); // menu 1
+  textNode.nodeValue = 'home';
+
+  const allA = document.querySelectorAll('a');
+  allA.forEach(function(elem){
+    elem.className = 'textDeco';
+  });
+
+  allA.forEach(function(num){
+    //class 값 확인
+    if(num.classList.contains('textDeco')) {//해당 클래스 속성이 포함되어 있으면 true
+      // class 값 변경
+      num.classList.replace('textDeco','testStyle'); //textDeco -> textStyle 교체
+    }
+  });
+
+  // id 취득, 변경, 새애성
+  const container = document.querySelector('.container')
+  container.id = 'wrap';
+
+  // 속성(특성) 값 취득
+  console.log(container.getAttribute('id'));
+
+  // data- 는 사용자 지정 속성으로 사용자가 필요로 의해 만들어 사용하는 속성.
+  // 속성(특성)과 속성의 값 설정
+  container.setAttribute('date-style','blue');//('속성','값')
+
+  // 지정 속성 제거
+  container.removeAttribute('data-style');
+
+</script>
+</body>
+</html>

@@ -17,6 +17,17 @@ num = 1.10;// 실수
 num = -20;// 음의 정수
 console.log(num);
 
+  // speical numberic values : infinity, -infinity, NaN
+  const infinity = 1 / 0;
+  const negativeInfinity = -1 / 0;
+  const NaN = 'not a number' / 2;
+  console.log(infinity);
+  console.log(negativeInfinity);
+  console.log(NaN);
+  
+  // bigInt 라는 것도 있음
+  
+
 // 논리 boolean
 var boo = true;// boolean. 참 == 1
 boo = false;// 거짓 == 0

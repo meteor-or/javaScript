@@ -29,3 +29,7 @@ console.log(g);
 // 한 줄에 여러 개의 변수를 선언함과 동시에 값 대입
 var num = 22, numA=234, sum = num + numA;
 console.log(sum);
+
+let name = 'tani';
+console.log(name);
+

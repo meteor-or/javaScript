@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<title>문서객체모델 DOM 2</title>
+<style>
+	.red { color:red;}
+</style>
+</head>
+
+<body>
+	<script>
+		// createElement(tagName); 태그 이름을 인자로 전달하여 요소 생성
+		const li = document.createElement('li');
+		// const li = document.createElement('<li>text</li>'); 오류 
+		
+		// creatTextNode(text) : 텍스트 노드 생성
+		const text = document.createTextNode('재미있는 DOM의 세계!')
+
+		// 상수 li에 텍스트 노드를 자식으로 추가
+		li.appendChild(text);
+
+		const ul = document.createElement('ul');
+		ul.appendChild(li);
+		console.log(ul); //<li><li>
+	
+		document.body.appendChild(ul); //화면출력
+
+		ul.setAttribute('id','gnb');
+
+		// insertAdjacentHTML(위치,문자열);
+		ul.insertAdjacentHTML('beforeend','<li>menu-2</li>');
+
+		/*
+		'beforebegin'
+		<a>
+		'afterbegin'
+			text
+		'beforeend'
+			</a>
+		'afterend'
+		*/
+
+		const menu = document.querySelector('.menu');
+
+	</script>
+</body>
+</html>
