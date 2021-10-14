@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<title>setInterval() 연습</title>
+<style>
+  body {
+    background-color: lightblue;
+    transition:0.4s;
+  }
+  p {
+    text-align: center;
+    font-size:4rem; font-weight: bold;
+  }
+  body.bg {
+    background-color:salmon;
+  }
+</style>
+<!-- 외부 문서 작성시 DOM을 불러오기 전이라면 defer 속성 적용 -->
+<script defer src="setIntervalEx.js"></script>
+</head>
+
+<body>
+  <p>
+    <span>00</span> : <span>00</span> : <span>00</span>
+  </p>
+</body>
+</html>

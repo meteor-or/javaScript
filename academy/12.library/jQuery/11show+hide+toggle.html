@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<title>.show(); hide(); toggle();</title>
+<link rel="stylesheet" href="../common/btn_wrap.css">
+<style>
+  #box { width:500px; height:300px; background-color:maroon; font-weight: bold; font-size:1.25rem; overflow: hidden; color:#fff }
+</style>
+<script src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.min.js"></script>
+</head>
+
+<body>
+  <div class="btn_wrap">
+    <div class="btn" id="btn1">show()</div>
+    <div class="btn" id="btn2">hide()</div>
+    <div class="btn" id="btn3">toggle()</div>
+  </div>
+  <div id="box">
+    <p>show(); 보임</p>
+    <p>hide(); 숨김</p>
+    <p>toggle(); show, hide 반복</p>
+  </div>
+<script>
+  $('#btn1').on('click',function(){
+    $('#box').show();// == display:none;
+  });
+  $('#btn2').on('click',function(){
+    // $('#box').css({display : 'none'});
+    $('#box').hide();// == display:block;
+  });
+  $('#btn3').on('click',function(){
+    $('#box').toggle(1000);
+  });
+</script>
+</body>
+</html>

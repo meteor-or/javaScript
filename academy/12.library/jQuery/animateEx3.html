@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<title>.animate() 연습 3</title>
+<script src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.min.js"></script>
+<script src="jquery-ui.min.js"></script>
+<style>
+
+button{
+  font-size: 2rem;
+}
+div{
+  position: relative;
+}
+</style>
+</head>
+
+<body>
+
+  <button id="left">left</button>
+  <button id="right">right</button>
+  <div>
+    <img src="https://via.placeholder.com/300x300/1E3163/fff?text=img1" alt="img1">
+  </div>
+<script>
+  $('#left').on('click',function(){
+    $('div').animate({
+      left:'-=300px'
+    },1500);
+  });
+  $('#right').on('click',function(){
+    $('div').animate({
+      left:'+=300px'
+  },1500);
+  });
+</script>
+</body>
+</html>

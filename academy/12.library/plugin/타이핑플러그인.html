@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<title>타이핑 플러그인</title>
+<style>
+  body { font-size: 2.5rem;}
+</style>
+<!-- typewriter js -->
+<script src="../common/core.js"></script>
+</head>
+
+<body>
+  <div id="typing"></div>
+
+<script>
+  const instance = new Typewriter('#typing', {
+      strings: ['Hello', 'World', 'javascript!'],// 출력 단어
+      autoStart: true,// 자동 시작
+      loop: true, // 반복
+      // pauseFor:3000  대기
+  });
+  instance.typeString('<strong>한글 작성</strong>도 가능합니다.').pauseFor(3000)
+  .deleteChars(4);
+</script>
+</body>
+</html>

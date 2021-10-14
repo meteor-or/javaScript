@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<title>모바일 장치 구분</title>
+<script>
+  // 적응형 웹(클라이언트에서 기기 확인 후 해당 페이지로 이동)
+  // PC버전 html에 작성
+
+  // alert(navigator.userAgent);
+  const smartObj = ['iphone', 'ipad', 'android'];
+  for(let idx in smartObj) {
+    // toLowerCase(); 소문자로 변환
+    if(navigator.userAgent.toLowerCase().match(new RegExp(smartObj[idx]))) {
+      //alert('네이버 모바일 페이지로 이동합니다.');
+      window.location = 'http://m.naver.com';// 포폴 작업시 상대경로 모바일 주소
+    }
+  }
+</script>
+</head>
+
+<body>
+  
+</body>
+</html>

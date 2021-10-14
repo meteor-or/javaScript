@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<title>addEventListner 연습</title>
+<script>
+</script>
+<style>
+</style>
+</head>
+
+<body>
+  <form>
+  <label>id : <input type="text"></label>
+  <input type="submit" onclick="onLoginSubmit();">
+  </form>
+  <p class="txt"></p>
+
+<script>
+  const inputID = document.querySelector('input[type=text]')
+  // 아이디를 4자 이하 작성시 '5자 이상으로 작성해주세요 'p에 출력.
+  
+function onLoginSubmit(event){
+  const userID = input.value;
+  if (userID.length <= 4){
+    document.querySelector('.txt').innerText = '5자 이상으로 작성해주세요 '}
+    console.log(userID);
+  }
+
+
+</script>
+</body>
+</html>

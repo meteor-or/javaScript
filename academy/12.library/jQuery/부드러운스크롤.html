@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>부드러운 스크롤</title>
+<script src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.min.js"></script>
+<style>
+  body{
+    margin: 0;
+  }
+  body::-webkit-scrollbar{
+    width: 10px;
+  }
+  body::-webkit-scrollbar-thumb{
+    background-color: salmon;
+    border-radius: 10px;
+  }
+  .box{
+    background-color: royalblue;
+    height: 1000vh;
+  }
+  #top {
+    position: fixed;
+    right: 50px;
+    bottom: 50px;
+    background-color: #fff;
+    padding: 10px 20px;
+    font-size: 2rem;
+    color: inherit;
+    text-decoration: none;
+    text-align: center;
+  }
+</style>
+</head>
+
+<body>
+  <h1>부드러운 스크롤</h1>
+  <div class="box">스크롤을 위한 박스</div>
+  <a href="#" id="top">위로</a>
+
+
+<script>
+  //a의 기본 성격(링크)
+  $('a[href="#"]').on('click', ()=>{
+    event.preventDefault();
+  });
+
+  $('#top').on('click',()=>{
+    $('html, body').scrollTop(200);//스크롤의 위치가 위에서부터 200px인 위치로이동
+  });
+
+  $('#top').on('click',()=>{
+    $('html, body').animate({scrollTop:0}, 300);
+  });
+</script>
+</body>
+</html>

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<title>.animate()</title>
+<script src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.min.js"></script>
+<script src="jquery-ui.min.js"></script>
+<style>
+
+  #box{
+    background-color: orange;
+    width: 100px;
+    height: 100px;
+  }
+  p{
+    margin: 0;
+  }
+</style>
+</head>
+
+<body>
+  <h1>.animate()</h1>
+  <button class="btn">버튼</button>
+  <div id="box">
+    <p>제이쿼리애니메이션</p>
+  </div>
+<script>
+  $('.btn').on('click',function(){
+    $('#box').animate({
+      'width':'500px',
+      height:400,
+      fontWeight:600,
+      fontSize:'1.5rem',
+      color:'#fff',
+      backgroundColor:'blue'
+    },1500, 'easeOutBounce')
+  });
+</script>
+</body>
+</html>

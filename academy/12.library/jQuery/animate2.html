@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<title>.animate() 순차 움직임</title>
+<script src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.min.js"></script>
+<style>
+</style>
+</head>
+
+<body>
+  <div class="btn_wrap">
+    <div class="btn" id="btn1">실행</div>
+    <div class="btn" id="btn2">순차 실행1</div>
+    <div class="btn" id="btn3">순차 실행2</div>
+  </div>
+  <div id="box"></div>
+<script>
+  $('#btn1').on('click',function(){
+    $('#box').animate({},300);
+  });
+  $('#btn2').on('click',function(){
+    $('#box').animate({},300);
+  });
+  $('#btn3').on('click',function(){
+    $('#box').animate({width:400},300).animate();
+  });
+</script>
+</body>
+</html>

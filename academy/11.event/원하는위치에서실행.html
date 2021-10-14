@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<title>원하는 위치에서 실행</title>
+<style>
+  body { margin:0; text-align: center; font-size:1.4rem; font-weight: bold; }
+  .box {
+    height:300vh;
+    background-color: orange;
+    padding-top:60px;
+  }
+  footer { background-color:maroon; color:#fff; padding:40px; }
+  #banner { 
+    background-color: #000; color:#fff;
+    width:300px; height:100px; line-height:100px;
+    position: fixed;
+    bottom:60px; right:-300px;
+    transition:0.3s;
+  }
+  #banner.sliding {
+    right:0;
+    /* transform: translateX(300px); */
+  }
+</style>
+</head>
+
+<body>
+  <h1>원하는 위치에서 실행</h1>
+  <div class="box">컨텐츠 영역입니다</div>
+  <footer>푸터</footer>
+
+  <div id="banner">쨔잔!</div>
+
+  <script>
+    const banner = document.querySelector('#banner');
+    const footer = document.querySelector('footer');
+
+    // window.addEventListener('scroll', function(){
+    // });
+    addEventListener('scroll', () => {
+      let user_scroll = window.pageYOffset;
+      console.log(user_scroll);
+
+      let objHeight = footer.offsetTop - window.innerHeight;
+      if (user_scroll >= objHeight) {// 배너 보임
+        banner.classList.add('sliding');
+      } else if (user_scroll < objHeight) {// 배너 숨김
+        banner.classList.remove('sliding');
+      }
+    });
+  </script>
+</body>
+</html>

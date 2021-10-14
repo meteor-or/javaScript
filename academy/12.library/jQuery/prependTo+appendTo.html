@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<title>prependTo+appendTo</title>
+<style>
+  .box {
+    width: 300px;
+    height: 200px;
+    border: 1px solid #000;
+    margin: 30px auto;
+  }
+</style>
+<script src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.min.js"></script>
+</head>
+
+<body>
+  <h1>.prependTo(),.appendTo();</h1>
+    <ul>
+      <li>$('B').prependTo('A'); 부모인 A의 자식들 중 객체 B를 자식들 중<mark>처음으로 <strong>이동</strong></mark>
+      </li>
+      <li>$('B').appendTo('A'); 부모인 A의 자식들 중 객체 B를 자식들 중<mark>마지막으로 <strong>이동</strong></li>
+    </ul>
+
+  <ol id='list1'>
+    <li class="txt1">텍스트 1-1</li>
+    <li class="txt2">텍스트 1-2</li>
+    <li class="txt3">텍스트 1-3</li>
+    <li class="txt4">텍스트 1-4</li>
+    <li class="txt5">텍스트 1-5</li>
+    <li class="txt6">텍스트 1-6</li>
+    <li class="txt7">텍스트 1-7</li>
+  </ol>
+  <ol id='list2'>
+    <li class="txt1">텍스트 2-1</li>
+    <li class="txt2">텍스트 2-2</li>
+    <li class="txt3">텍스트 2-3</li>
+    <li class="txt4">텍스트 2-4</li>
+    <li class="txt5">텍스트 2-5</li>
+    <li class="txt6">텍스트 2-6</li>
+    <li class="txt7">텍스트 2-7</li>
+  </ol>
+  
+<script>
+  $('.txt7').prependTo('#list1');//처음으로 이동
+  $('#list1.txt6').prependTo('#list1');
+  $('#list1.txt5').prependTo('#list1');
+  
+  $('.txt1').prependTo('#list2');//마지막으로 이동
+  $('#list2 .txt2').prependTo('#list2');
+  $('#list2 .txt3').prependTo('#list2');
+</script>
+</body>
+</html>

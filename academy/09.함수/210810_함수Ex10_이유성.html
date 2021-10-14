@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<title>연습 10</title>
+<style>
+.btn {
+  border: 1px solid #000;
+  width: 100px;
+  height: 100px;
+}
+.btn:hover{
+  background-color: #000;
+  color: #fff;
+}
+</style>
+</head>
+
+<body>
+<div class="btn" id="btn1" onclick="odd()">홀수</div>
+<div class="btn" id="btn2" onclick="even()">짝수</div>
+
+<script>
+// 1~100 까지의 임의의 수를 콘솔에 출력
+//Math.random
+
+let num = Math.floor(Math.random () *100)
+document.writeln (num)
+document.writeln (num % 2)
+
+//홀수인 경우. 홀수 버튼 클릭시 '정답입니다.' 짝수 버튼 클릭시 '틀렸습니다.'
+function odd(){
+  if (num % 2 == 1){
+    alert('정답입니다.')
+  } else {
+    alert('틀렸습니다.')
+  }
+}
+
+
+//짝수인 경우, 짝수 버튼 클릭시 '정답입니다.' 홀수 버튼 클릭시 '틀렸습니다.'
+function even(){
+  if (num % 2 == 0){
+    alert('정답입니다.')
+  } else {
+    alert('틀렸습니다.')
+  }
+
+}
+
+
+</script>
+</body>
+</html>

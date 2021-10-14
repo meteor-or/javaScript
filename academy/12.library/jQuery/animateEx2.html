@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<title>.animate() 연습 1</title>
+<script src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.min.js"></script>
+<script src="jquery-ui.min.js"></script>
+<style>
+
+button{
+  font-size: 2rem;
+}
+div{
+  position: relative;
+}
+</style>
+</head>
+
+<body>
+
+  <button id="move">move</button>
+  <button id="return">return</button>
+  <div>
+    <img src="https://via.placeholder.com/300x600/1E3163/fff?text=img1" alt="img1">
+  </div>
+<script>
+  $('#move').on('click',function(){
+    $('div').animate({
+      //marginLeft:1500
+      //'transform':'trnaslateX(300px)' animate()에선 사용 X
+      left:300
+    },1500);
+  });
+  $('#return').on('click',function(){
+    $('div').animate({
+      //marginLeft:0
+      left:0
+  },1500);
+  });
+</script>
+</body>
+</html>

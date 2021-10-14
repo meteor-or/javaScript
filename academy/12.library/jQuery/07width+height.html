@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<title>제목</title>
+<style>
+  .box { width:40px; height:40px; margin:50px auto; background-color: orange; }
+</style>
+<script src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.min.js"></script>
+</head>
+
+<body>
+  <div class="box"></div>
+<script>
+  //$('.box').width('50vw'); 매개 변수 안에 값을 넣으면 가로에 적용
+  let wt = $('.box').width();// 박스의 가로값 반환
+  console.log(wt);
+  $('.box').height(100);
+  
+  
+</script>
+</body>
+</html>

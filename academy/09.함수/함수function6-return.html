@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<title>함수 function 6 - return</title>
+<style>
+  .btn { border: 1px solid #000; width:100px; padding:10px; text-align: center; font-weight:bold; cursor: pointer; }
+  .btn:hover { background-color:#000; color:#fff; }
+</style>
+<script>
+  // 문서 준비 이벤트
+  // window.onload = function(){}; 하위 노드를 모두 불러왔을 때 이벤트 발생
+  window.onload = function() {
+    let btn = document.getElementById('btn');// 문서 안에서 id btn 탐색
+    btn.onclick = function() {// 클릭 이벤트 연결
+      fx();
+    }
+  } 
+</script>
+</head>
+
+<body>
+  <!-- <div class="btn" id="btn" onclick="fx()">함수 호출</div> -->
+  <div class="btn" id="btn">함수 호출</div>
+
+  <script>
+    function fx() {
+      alert('abc');
+      return;// 강제 종료
+      alert('b');
+    }
+  </script>
+</body>
+</html>

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<title>.val()</title>
+<link rel="stylesheet" href="../common/btn_wrap.css">
+<style>
+  p, [type=text] { font-size:1.5rem;}
+</style>
+<script src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.min.js"></script>
+</head>
+
+<body>
+  <h1>.val()</h1>
+  <h2>폼과 관련된 요소(input 등)의 값을 가져오거나 반환</h2>
+  <div class="btn_wrap">
+    <div class="btn" id="btn1">.text()</div>
+    <div class="btn" id="btn2">.html()</div>
+    <div class="btn" id="btn3">.val()</div>
+  </div>
+  <p>
+    이름: <input type="text" id="txt">
+  </p>
+
+<script>
+  $('#btn1').on('click', function(){
+    let txt1 = $('p').text();
+    let txt2 = $('input[type=text]').text();
+    console.log(txt2);
+  });
+  $('#btn2').on('click', function(){
+    let htm1 = $('p').html();
+    let htm2 = $('input[type=text]').html();
+    console.log(htm2);
+  });
+  $('#btn3').on('click', function(){
+    let val1 = $('p').val();
+    let val2 = $('input[type=text]').val();
+    console.log(val2);
+  });
+</script>
+</body>
+</html>

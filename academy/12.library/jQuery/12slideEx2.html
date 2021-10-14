@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<title>slidemethodEx2</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500&display=swap" rel="stylesheet">
+<style>
+
+  body{
+    margin: 0;
+    font-family: 'Noto Sans KR', sans-serif;
+  }
+  ul{
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+  a{
+    color: inherit;
+    text-decoration: none;
+  }
+  #gnb{
+    background-color: royalblue;
+    color: #fff;
+    font-size: 2rem;
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    height: 50px;
+  }
+  .gnb_list{
+    width: 20%;
+  }
+  .snb{
+    background-color: royalblue;
+    font-size: 1.2rem;
+    display: none;
+  }
+  .snb_list:hover{
+    background-color: darkblue;
+  }
+  .snb_list{
+    
+    padding: 20px 0;
+  }
+</style>
+<script src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.min.js"></script>
+</head>
+
+<body>
+  <header>
+  <ul id="gnb">
+    <li class="gnb_list">
+      <a href="#">대메뉴1</a>
+      <ul class="snb snb1">
+        <li class="snb_list"><a href="#">sub_menu1-1</a></li>
+        <li class="snb_list"><a href="#">sub_menu1-2</a></li>
+        <li class="snb_list"><a href="#">sub_menu1-3</a></li>
+        <li class="snb_list"><a href="#">sub_menu1-4</a></li>
+      </ul>
+    </li>
+    <li class="gnb_list">
+      <a href="#">대메뉴2</a>
+      <ul class="snb snb2">
+        <li class="snb_list"><a href="#">sub_menu2-1</a></li>
+        <li class="snb_list"><a href="#">sub_menu2-2</a></li>
+        <li class="snb_list"><a href="#">sub_menu2-3</a></li>
+      </ul>
+    </li>
+    <li class="gnb_list">
+      <a href="#">대메뉴3</a>
+      <ul class="snb snb3">
+        <li class="snb_list"><a href="#">sub_menu3-1</a></li>
+        <li class="snb_list"><a href="#">sub_menu3-2</a></li>
+      </ul>
+    </li>
+    <li class="gnb_list">
+      <a href="#">대메뉴4</a>
+      <ul class="snb snb4">
+        <li class="snb_list"><a href="#">sub_menu4-1</a></li>
+        <li class="snb_list"><a href="#">sub_menu4-2</a></li>
+        <li class="snb_list"><a href="#">sub_menu4-3</a></li>
+        <li class="snb_list"><a href="#">sub_menu4-4</a></li>
+        <li class="snb_list"><a href="#">sub_menu4-5</a></li>
+      </ul>
+    </li>
+  </ul>
+  </header>
+  <main>
+    <p>slide method Ex2</p>
+  </main>
+  <footer>
+
+  </footer>
+</body>
+<script>
+  $('.gnb_list').on({
+    'mouseenter':function(){
+      $(this).children('.snb').slideDown();
+      $(this).parent().siblings('.snb').slideUp('fast');
+    },
+    'mouseleave':function(){
+      $(this).children('.snb').slideUp();
+    }
+  });
+</script>
+</html>

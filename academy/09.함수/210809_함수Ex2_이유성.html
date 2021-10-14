@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<title>함수 연습2</title>
+<style>
+  .btn{
+    border: 1px solid #000;
+  }
+  .btn:hover{
+    background-color: #000;
+    color: #fff;
+  }
+</style>
+</head>
+
+<body>
+  <div class="btn" id="orange" onclick="bgColor_1()">orange</div>
+  <div class="btn" id="orange" onclick="bgColor_2()">teal</div>
+</body>
+<script>
+  // 오렌지 버튼 클릭시 body의 배경색 오렌지로
+  function bgColor_1() {
+    const body = document.querySelector('body');
+    body.style.backgroundColor = 'orange';
+  }
+  
+  // 틸 버튼 클릭시 body의 배경색 틸로
+  function bgColor_2() {
+    const body = document.querySelector('body');
+    body.style.backgroundColor = 'teal';
+  }
+  
+</script>
+</html>

@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<title>스타일 속성 리셋</title>
+<style>
+  body {
+    background-color: teal;
+  }
+</style>
+</head>
+
+<body>
+<script>
+  document.body.style.background = 'transparent';
+  setTimeout( () => {
+    // delete 를 사용해 속성을 삭제하는 대신 '' 빈문자열을 적용해 처음부터 style.back~ 속성이 없었던 것처럼 처리
+    document.body.style.background = ''
+  }, 3000);
+</script>
+</body>
+</html>

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<title>.each() 연습2</title>
+<script src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.min.js"></script>
+<style>
+  
+</style>
+</head>
+
+<body>
+  <ul>
+    <li>menu 1</li>
+    <li>menu 2</li>
+    <li>menu 3</li>
+    <li>menu 4</li>
+    <li>menu 5</li>
+  </ul>
+  
+<script>
+  $('.box').each(function(idx){
+    let color = $(this).text();
+    $(this).css({backgroundColor: color}).delay(idx * 800).fadeIn(500);
+  });
+</script>
+</body>
+</html>

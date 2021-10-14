@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Travel Website</title>
+  <meta charset="utf-8">
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+  <img id="logo" src="images/logo.png" width="165" height="58">
+ 
+  <div id="menu">
+    <a class="home" onclick="clickHome();">Home</a>
+    <a class="seoul" onclick="clickSeoul();">Seoul</a>
+    <a class="tokyo" onclick="clickTokyo();">Tokyo</a>
+    <a class="paris" onclick="clickParis();">Paris</a>
+  </div>
+
+  <img id="photo" src="images/home.png" width="90%">
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+  <script>
+    // 사진을 바꿔주는 함수
+    function clickHome() {
+      $('#photo').attr('src','image/seoul.png')
+      document.getElementById('photo').src = 'images/home.png';
+      document.getElementsByTagName('a')[0].style.fontWeight = 'bold';
+      document.getElementsByTagName('a')[1].style.fontWeight = 'normal';
+      document.getElementsByTagName('a')[2].style.fontWeight = 'normal';
+      document.getElementsByTagName('a')[3].style.fontWeight = 'normal';
+    }
+
+    function clickSeoul() {
+      document.getElementById('photo').src = 'images/seoul.png';
+      document.getElementsByTagName('a')[0].style.fontWeight = 'normal';
+      document.getElementsByTagName('a')[1].style.fontWeight = 'bold';
+      document.getElementsByTagName('a')[2].style.fontWeight = 'normal';
+      document.getElementsByTagName('a')[3].style.fontWeight = 'normal';
+    }
+    
+    function clickTokyo() {
+      document.getElementById('photo').src = 'images/tokyo.png';
+      document.getElementsByTagName('a')[0].style.fontWeight = 'normal';
+      document.getElementsByTagName('a')[1].style.fontWeight = 'normal';
+      document.getElementsByTagName('a')[2].style.fontWeight = 'bold';
+      document.getElementsByTagName('a')[3].style.fontWeight = 'normal';
+    }
+    
+    function clickParis() {
+      document.getElementById('photo').src = 'images/paris.png';
+      document.getElementsByTagName('a')[0].style.fontWeight = 'normal';
+      document.getElementsByTagName('a')[1].style.fontWeight = 'normal';
+      document.getElementsByTagName('a')[2].style.fontWeight = 'normal';
+      document.getElementsByTagName('a')[3].style.fontWeight = 'bold';
+    }
+  </script>
+</body>
+</html>

@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<title>.animate() 연습 7</title>
+<style>
+  body { margin:0; font-weight:bold; font-size:1.8rem; color:#fff; }
+  /* 사이드 드로어 전체 영역 */
+  nav {
+    /* background-color: #efefef; */
+    position: fixed;
+    top:0; left:-200px;/* 탭 크기 제외 값 */
+    height:100%; width:250px;/* 탭 포함 가로값 */
+  }
+  /* 메뉴 영역 */
+  nav #gnb {
+    background-color:maroon;
+    margin:0; padding:50px 0 0 0;
+    list-style:none;
+    width:200px; height:100%;
+    text-align: center;
+    line-height:2;
+    box-sizing: border-box;
+    box-shadow:
+      0 6.7px 5.3px -75px rgba(0, 0, 0, 0.028),
+      0 22.3px 17.9px -75px rgba(0, 0, 0, 0.042),
+      0 100px 80px -75px rgba(0, 0, 0, 0.1);
+  }
+  /* 탭 버튼 */
+  nav .btn {
+    background-color:maroon;
+    width:50px; height:100px;
+    position: absolute;
+    top:0; left:200px;
+    box-shadow:
+      0 6.7px 5.3px -75px rgba(0, 0, 0, 0.028),
+      0 22.3px 17.9px -75px rgba(0, 0, 0, 0.042),
+      0 100px 80px -75px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    line-height:100px; 
+    border-radius:0 20px 20px 0; 
+  }
+  nav .btn img {
+    width:60%;
+  }
+</style>
+<script src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.min.js"></script>
+</head>
+
+<body>
+  <nav>
+    <ul id="gnb">
+      <li>menu 1</li>
+      <li>menu 2</li>
+      <li>menu 3</li>
+      <li>menu 4</li>
+    </ul>
+
+    <div class="btn"><img src="images/lock-solid.svg" alt="open button"></div>
+  </nav>  
+<script>
+  let num = 0;
+  $('.btn').on('click',function(){
+    if(num === 0) {// 닫혀 있는 상태에서 오픈
+      $('nav').animate({ left:0 }, 200);
+      $(this).children().attr({ src: 'images/unlock-solid.svg'});// html 속성인 src 변경
+      // $().css({backgroundImage:'url()'}); css background 속성 적용시
+      num = 1;// 재대입
+    } else {// 열러 있는 상태에서 클로즈
+      $('nav').animate({ left:-200 }, 200);
+      $(this).children().attr({ src: 'images/lock-solid.svg'});
+      num = 0;
+    }
+  });
+</script>
+</body>
+</html>

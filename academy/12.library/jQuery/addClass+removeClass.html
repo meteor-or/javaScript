@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<title>.addClass(); .removeClass()</title>
+<link rel="stylesheet" href="../common/btn_wrap.css">
+<style>
+  #box { border:1px solid #000; }
+  /*  
+    종속선택자: div.style { 띄어쓰기 없음!!! div들 중 클래스 선택자가 style인 요소 }
+    하위 선택자: div .style { 띄어쓰기 있음!! div의 하위 요소들 중 클래스 선택자가 style인 요소 }
+  */
+  #box.style1 { background-color: orange; width:500px; margin:50px auto; }
+  #box.style2 { background-color:maroon; color:#fff; font-style: italic; border:dotted 3px teal; width:400px; }
+</style>
+<script src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.min.js"></script>
+</head>
+
+<body>
+  <div class="btn_wrap">
+    <div class="btn" id="btn1">클래스1 적용</div>
+    <div class="btn" id="btn2">클래스1 제거</div>
+    <div class="btn" id="btn3">클래스2 적용</div>
+    <div class="btn" id="btn4">클래스2 제거</div>
+    <div class="btn" id="btn5">클래스 제거(매개변수 x)</div>
+  </div>
+
+  <div id="box">
+    <h2>.addClass(); 클래스 선택자 적용</h2>
+    <h2>.removeClass(); 클래스 선택자 제거</h2>
+  </div>
+
+<script>
+  $('#btn1').on('click',function(){
+    $('#box').addClass('style1');
+  });
+  $('#btn2').on('click',function(){
+    $('#box').removeClass('style1');
+  });
+  $('#btn3').on('click',function(){
+    $('#box').addClass('style2');
+  });
+  $('#btn4').on('click',function(){
+    $('#box').removeClass('style2');
+  });
+  $('#btn5').on('click',function(){
+    $('#box').removeClass();// 매개변수 값을 넣지 않으면 클래스 값 전부 제거
+  });
+</script>
+</body>
+</html>

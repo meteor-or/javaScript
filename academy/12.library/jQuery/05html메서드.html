@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<title>.html()</title>
+<link rel="stylesheet" href="../common/btn_wrap.css">
+<script src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.min.js"></script>
+<script>
+  //$(document).ready();
+  $(function(){
+    $('#btn1').on('click', function() {
+      let ht = $('ul').html();// 기준 객체의 자식 노드를 모두 리턴
+      console.log(`html()는 ${ht}`);// ul의 하위로 있는 태그, 문자 등 모든 값 출력
+    });
+    $('#btn2').on('click', function() {
+      let txt = $('ul').text();// 기준 객체의 텍스트 노드만 리턴
+      console.log(`text()는 ${txt}`);// 메뉴1, 메뉴2... 문자만 출력
+    });
+  });
+</script>
+</head>
+
+<body>
+  <h1>.html()</h1>
+  <h2>html 구조를 가져오거나 수정</h2>
+  <div class="btn_wrap">
+    <div class="btn" id="btn1">html()</div>
+    <div class="btn" id="btn2">text()</div>
+  </div>
+  <ul>
+    <li><strong><em>메뉴 1</em></strong></li>
+    <li><mark>메뉴 2</mark></li>
+    <li>메뉴 3</li>
+    <li><a href="#">메뉴 4</a></li>
+    <li>메뉴 5</li>
+  </ul>
+</body>
+</html>

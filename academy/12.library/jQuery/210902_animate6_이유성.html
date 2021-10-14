@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<title>.animate() 연습 6</title>
+<script src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.min.js"></script>
+<style>
+  ul{
+    padding: 0;
+    margin: 0;
+    list-style: none;
+  }
+  body{
+    margin: 0;
+  }
+  .container{
+    display: flex;
+    position: absolute;
+    left: 0;
+    color: aliceblue;
+  }
+  #menuList{
+    background-color: orange;
+    height: 100vh;
+    width: 300px;
+    margin: 0;
+    text-align: center;
+    font-size: 2rem;
+    left:
+  }
+
+  .menuItem:nth-child(1){
+    margin-top: 100px;
+  }
+  
+  #tag{
+    width: 60px;
+    height: 100px;
+    background: orange;
+  }
+  #tag p{
+    line-height: 40px;
+    transform: rotate(270deg);
+    font-weight: bold;
+    cursor: pointer;
+    font-size: 1.4rem;
+  }
+
+  .left0{
+    left: 0;
+  }
+  .left-300{
+    left:-300;
+  }
+</style>
+</head>
+
+<body>
+  <div class="container" class="left0">
+    <ul id="menuList">
+      <li class="menuItem"><a>menu 1</a></li>
+      <li class="menuItem"><a>menu 2</a></li>
+      <li class="menuItem"><a>menu 3</a></li>
+      <li class="menuItem"><a>menu 4</a></li>
+    </ul>
+    <div id="tag">
+      <p>close</p>
+    </div>
+  </div>
+<script>
+  $('#tag').click(function(){
+    if ( $(this).hasClass("isDown") ) {
+        $(".container").animate({left:-300});
+        $('p').text('open')                        
+    } else {
+        $(".container").animate({left:0});
+        $('p').text('close')     
+    }
+    $(this).toggleClass("isDown");
+    return false;
+  });
+</script>
+</body>
+</html>

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<title>attr()</title>
+<link rel="stylesheet" href="../common/btn_wrap.css">
+<script src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.min.js"></script>
+<script>
+$(function(){
+  console.log($('p > a').attr('href'));// 속성 href의 값을 가져 옴
+
+  $('.btn').on('click',function(){
+    $('p').find('a').attr({href:'http://www.naver.com', 'target':'_blank'});
+  });
+});
+</script>
+</head>
+
+<body>
+  <h1>attr()</h1>
+  <h2>html 태그 속성(attribute)의 값을 가져오거나 반환</h2>
+
+  <p><a href="#">네이버 바로가기</a></p>
+
+  <div class="btn_wrap">
+    <div class="btn">네이버 주소 넣기</div>
+  </div>
+</body>
+</html>

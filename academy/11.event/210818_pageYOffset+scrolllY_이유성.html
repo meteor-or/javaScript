@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<title>브라우저 사이즈</title>
+<style>
+  header {
+    position: fixed;
+    width: 100vw;
+    background-color: blue;
+    height: 200px;
+    z-index: 10;
+  }
+  main {
+    position: absolute;
+    top: 200px;
+    height: 200vh;
+  }
+  body{
+    margin: 0;
+    font-size: 72px;
+    font-weight: bold;
+  }
+</style>
+</head>
+
+<body>
+  <header>header</header>
+  <main>main</main>
+  <footer>footer</footer>
+<script>
+  const header = document.querySelector('header')
+  
+  window.addEventListener('scroll', function(){
+    if (window.pageYOffset >= header.clientHeight){
+      header.style.backgroundColor = 'orange'
+    } else{
+      header.style.backgroundColor = 'blue'
+    }
+  })
+
+  console.log('전체 창 너비: ', window.innerWidth);
+  console.log('전체 창 높이: ', window.innerHeight);
+  console.log('스크롤바 제외 너비: ', document.documentElement.clientWidth);
+  console.log('스크롤바 제외 너비: ', document.documentElement.clientHeight);
+  console.log('가로 스크롤에 의해 가려진 왼쪽 영역 너비:', window.pageXOffset);
+  console.log('가로 스크롤에 의해 가려진 위쪽 영역 너비:', window.pageYOffset);
+  //.pageXOffset == .scrollY
+  // 브라우저간의 호환성을 위해 .pageXOffset을 좀 더 많이 사용
+</script>
+</body>
+</html>

@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<title>toggle Ex1</title>
+<style>
+  #mobile_btn {
+    cursor: pointer;
+    border: 1px solid #000;
+    width: fit-content;
+    padding: 10px;
+  }
+  #gnb {
+    list-style: none;
+    transition: all .35s;
+    background-color: #ccc;
+    width: 300px;
+    height: 120px;
+    overflow: hidden;
+  }
+</style>
+</head>
+
+<body>
+  <div id="mobile_btn">메뉴</div>
+  <ul id="gnb">
+    <li>menu1</li>
+    <li>menu2</li>
+    <li>menu3</li>
+    <li>menu4</li>
+    <li>menu5</li>
+  </ul>
+
+<script>
+  const mobileBtn = document.querySelector('#mobile_btn');
+  const gnb = document.querySelector('#gnb');
+
+  mobileBtn.addEventListener('click',function(){
+    gnb.classList.toggle('toggleDown');
+
+
+  let toggleDown = gnb.classList.contains('toggleDown')
+  if (toggleDown){
+    gnb.style.height = '120px';
+  } else {
+    gnb.style.height = '0';
+  }
+});
+</script>
+</body>
+</html>

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<title>fullpage js 연습</title>
+<!-- fullpage css -->
+<link rel="stylesheet" href="../common/jquery.fullpage.min.css">
+
+<script src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.min.js"></script>
+<!-- fullpage js -->
+<script src="../common/jquery.fullpage.min.js"></script>
+<!-- easings js -->
+<script src="../common/easings.min.js"></script>
+<!-- 내가 작성한 js -->
+<script>
+
+  $(document).ready(function() {
+    $('#fullpage').fullpage({
+      //options here
+      autoScrolling:true,
+      scrollHorizontally: true
+    });
+  
+    //methods
+    $.fn.fullpage.setAllowScrolling(false);
+  })
+  
+</script>
+</head>
+
+<body>
+  <div id="fullpage">
+    <div class="section box1">또 다른 세계를 넣으면 됩니다.</div>
+    <div class="section box2">
+      <div class="slide"> Slide 1 </div>
+      <div class="slide"> Slide 2 </div>
+      <div class="slide"> Slide 3 </div>
+      <div class="slide"> Slide 4 </div>  
+    </div>
+    <div class="section box3">Some section</div>
+    <div class="section box4">Some section</div>
+  </div>
+  
+
+<script>
+  
+</script>
+</body>
+</html>

@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<title>.prependTo(); .appendTo(); 연습 2</title>
+<style>
+  .container {
+    width:400px; height:200px;
+    margin:50px auto;
+    border:1px solid #000;
+    position: relative;
+    /* overflow: hidden; */
+  }
+  .container ul {
+    margin:0; padding:0;
+    list-style:none;
+  }
+  .container #btn li {
+    background-color:rgba(0,0,0,0.7);
+    color:#fff; 
+    font-weight: bold; font-size:2.2rem; text-align: center;
+    cursor: pointer;
+    width:40px; height:50px;
+    line-height:50px;
+    position: absolute;
+    top:50%;
+  }
+  .container #btn li:nth-child(1) { left:0; transform: translateY(-50%);}
+  .container #btn li:nth-child(2) { right:0; transform: translateY(-50%);}
+</style>
+<script src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.min.js"></script>
+<script>
+  $(function(){
+    // 왼쪽, 이전 버튼 1->4->3->2->1->4..
+    //$('#btn li:first-child').on('click',function(){
+    $('#btn li').first().on('click',function(){
+      //$('#gallery li').eq(3).prependTo('#gallery');//제일 앞으로 이동
+      $('#gallery li').last().prependTo('#gallery');
+    });
+
+    // 오른쪽, 다음 버튼 1->2->3->4->1->2...
+    $('#btn li').eq(1).on('click',function(){
+      $('#gallery li').first().appendTo('#gallery');//제일 마지막으로 이동
+    });
+  });
+</script>
+</head>
+
+<body>
+<div class="container">
+  <ul id="btn">
+    <li>&lt;</li>
+    <li>&gt;</li>
+  </ul>
+  <ul id="gallery">
+    <li><img src="https://via.placeholder.com/400x200/1E3163/fff?text=img1" alt="img1"></li>
+    <li><img src="https://via.placeholder.com/400x200/2D46B9/fff?text=img2" alt="img2"></li>
+    <li><img src="https://via.placeholder.com/400x200/F037A5/fff?text=img3" alt="img3"></li>
+    <li><img src="https://via.placeholder.com/400x200/3DB2FF/fff?text=img4" alt="img4"></li>
+  </ul>
+</div>
+</body>
+</html>

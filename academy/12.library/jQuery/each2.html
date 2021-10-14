@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<title>.each()2</title>
+<script src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.min.js"></script>
+<style>
+  .btn_wrap{
+    display: flex;
+    justify-content: center;
+  }
+  .btn{
+    border: 1px solid #000;
+    padding: 10px;
+    width: 40px;
+    height: 10px;
+    line-height: 10px;
+    text-align: center;
+    font-weight: bold;
+  }
+  .btn:hover{
+    background-color: #000;
+    color: #fff;
+    cursor: pointer;
+  }
+</style>
+</head>
+
+<body>
+  <div class="btn_wrap">
+    <div class="btn active" id="btn1">btn1</div>
+    <div class="btn active" id="btn2">btn2</div>
+    <div class="btn active" id="btn3">btn3</div>
+    <div class="btn" id="btn4">btn4</div>
+    <div class="btn" id="btn5">btn5</div>
+  </div>
+  <p class="txt">이 곳에 출력됩니다.</p>
+<script>
+  $('#btn1').on('click',function(){
+    $('.txt').text('클릭한 버튼은 btn1입니다.');
+  });
+
+  $('.btn').each(function(){
+    $(this).on('click', function(){
+      let name = $(this).text();
+      $('.txt').text(`클릭한 버튼은 ${name}입니다.`)
+    });
+  });
+  /*
+  $().each();
+  $().each(function(){}); 객체의 수만큼 실행
+  $().each(function(index, 현재 객체 또는 그 값){});
+*/
+</script>
+</body>
+</html>

@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<title>마우스이벤트</title>
+<style></style>
+<script src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.min.js"></script>
+<script>
+  /*
+    이벤트 핸들러 handler:
+      이벤트 발생시 실행되는 코드 모음. 즉 실행되는 함수.
+      특정 요소에 지정된 이벤트가 발생하면 이벤트 리스너에 연결된 이벤트 핸들러 실행
+    이벤트 리스터 listner:
+      특정 이벤트에 대해 일어날 동작.
+      대게 이벤트 리스너와 이벤트 핸들러를 합쳐 이벤트 리스너라 함.
+  */
+  //.click(function(){}); .dbclick(); .mouseenter(); 메서드로 이벤트 리스너 전달
+    // .on('click',function(){}); .on('dbclick',function(){}); 메서드에 매개변수로 전달
+
+  //문서 준비 이벤트
+  $(document).ready(function(){
+    // h1을 클릭했을때
+    $('h1').click(function(){
+      $('h1').css({backgroundColor:'lightblue'});
+    });
+    //li들 첫번째에 마우스를 올리면
+    $('li').first().on('mouseenter',function(){
+      // 마우스를 올린 그 li만을 지칭
+      $('li').css({backgroundColor:'lightpink'});
+    });
+    //li들 첫번째에 마우스가 벗어나면
+    $('li').first().on('mouseleave',function(){
+      $('li').css({backgroundColor:'transparent'});
+    });
+    
+    // .hover(function(){}, function(){}); .mouseenter()와 .mouseleave()가 순차적으로 일어나는 매서드
+    $('li').hover(function(){ //.mouseenter()
+      $(this).css({fontWeight:'bold', fontSize:'1.3rem'});
+    }, function(){// .mouseleave()
+      $(this).css({fontWeight:'normal', fontSize:'1.25rem'});
+    });
+
+    // pre 영역에서 마우스가 움직이면
+    $('pre').on('mousemove',function(){
+      $('strong').css({border:'1px solid #000'});
+    });
+
+    // pre을 더블 클릭하면
+    $('pre').on('dbclick',function(){
+      $(this).css({backgroundColor:'#ddd'});
+    });
+
+    //여러 이벤트 적용
+    $('strong').on({
+      'mouseenter':function(){
+        $(this).css({backgroundColor:'maroon',color:'#fff'});
+      },
+      'mouseleave':function(){
+        $(this).css({backgroundColor:'transparent'});
+      },
+      'click':function(){
+        $(this).css({padding:10});
+      }
+    });
+  });
+</script>
+</head>
+
+<body>
+  <div class="container">
+    <h1>마우스 이벤트</h1>
+    <ul>
+      <li>click:클릭했을 때</li>
+      <li>dbclick: 더블 클릭 했을 떄</li>
+      <li>mouseover: 마우스를 위에 올렸을 때. 하위 노드에 영향을 줌</li>
+      <li>mouseout:마우스가 벗어났을 떄. 하위 노드에 영향을 줌</li>
+      <li>mouseenter: 마우스를 위에 올렸을 때</li>
+      <li>mouseleave: 마우스가 벗어났을 떄</li>
+      <li>mousemove: 마우스가 움직일 때</li>
+      <li>hover: 마우스를 각체 위에 올렸을 때와 벗어났을 때. jQuery 전용</li>
+    </ul>
+
+    <p>
+      <strong>여러 이벤트 적용시</strong>
+      <pre>
+      &().on({
+        'mouseenter':function(){},
+        'mouseleave':function(){},
+        '이벤트명':function(){}
+        'mouseenter':function(){}
+      })
+    </pre>
+    </p>
+  </div>
+</body>
+</html>

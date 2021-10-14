@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<title>.toggleClass()</title>
+<link rel="stylesheet" href="../common/btn_wrap.css">
+<style>
+  #box { width:500px; height:200px; margin:50px auto; border:1px solid #000; transition:0.4s; }
+  #box.bg {
+    background-color:teal;
+    width:200px;
+    border-style:dotted;
+  }
+  .btn{
+    border: 4px solid #000;
+    width: fit-content;
+    cursor: pointer;
+  }
+</style>
+<script src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.min.js"></script>
+<script>
+  $(function(){
+    $('.btn').on('click',function(){
+      // .addClass()와 .removeClass()가 번갈아 일어남
+      $('#box').toggleClass('bg');
+    });
+  });
+</script>
+</head>
+
+<body>
+  <div class="btn_wrap">
+    <div class="btn">toggleClass()</div>
+  </div>
+  <div id="box"></div>
+</body>
+</html>

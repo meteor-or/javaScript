@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<title>.animate() 연습 5</title>
+<script src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.min.js"></script>
+<style>
+  ul{
+    padding: 0;
+    margin: 0;
+    list-style: none;
+  }
+  .container{
+    width: 500px;
+    height: 300px;
+    margin: 50px auto;
+    border: 1px solid #000;
+    position: relative;
+    overflow: hidden;
+  }
+  .container #btn{
+    position: absolute;
+    display: flex;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+  .container #btn li{
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background: rgba(127,0,0,0.5);
+    text-indent: -9999px;
+    cursor: pointer;
+    margin: 4px;
+  }
+  .container #btn li:hover{
+    border: 1px solid rgba(127,0,0,1);
+  }
+  .container #slider{
+    display: flex;
+    width: 2000px;
+  }
+</style>
+</head>
+
+<body>
+  <div class="container">
+    <ul id="btn">
+      <li>1</li>
+      <li>2</li>
+      <li>3</li>
+      <li>4</li>
+    </ul>
+    <ul id="slider">
+      <li><img src="http://via.placeholder.com/500x300/00A19D/22577A?text=img1" alt="img1"></li>
+      <li><img src="http://via.placeholder.com/500x300/FFF8E5/22577A?text=img2" alt="img2"></li>
+      <li><img src="http://via.placeholder.com/500x300/FFB344/22577A?text=img3" alt="img3"></li>
+      <li><img src="http://via.placeholder.com/500x300/E05D5D/22577A?text=img4" alt="img4"></li>
+    </ul>
+  </div>
+<script>
+  $('#btn li').on('click',function(){
+    let idx = $(this).index();// 인덱스 값을 가져오거나 반환
+    $('#slider').animate({
+      marginLeft:-500 * idx
+    });
+  });
+</script>
+</body>
+</html>

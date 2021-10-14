@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<title>attr 연습 3</title>
+<style>
+  .container{
+    border: 3px solid #000;
+    margin: 50px auto;
+    width: 400px;
+    height: 308px;
+  }
+  .main_img img{
+    width: 400px;
+  }
+  #btn_wrap{
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    display: flex;
+  }
+  #btn_wrap img {
+    width: 100px;
+    height: 80px;
+    display: block;
+    opacity: 0.5;
+    cursor: pointer;
+  }
+  #btn_wrap img:hover{
+    opacity: 1;
+  }
+</style>
+<link rel="stylesheet" href="../common/btn_wrap.css">
+<script src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.min.js"></script>
+
+
+</head>
+
+<body>
+<div class="container">
+  <div class="main_img"><img src="images/img02.jpg" alt=""></div>
+  <ul id="btn_wrap">
+    <li><img src="images/img02.jpg" alt="img1"></li>
+    <li><img src="images/img03.jpg" alt="img2"></li>
+    <li><img src="images/img04.jpg" alt="img3"></li>
+    <li><img src="images/img05.jpg" alt="img4"></li>
+  </ul>
+</div>
+<script>
+  $('li').on('click', function(){
+    let imgSrc = $(this).children().attr('src');
+    let imgAlt = $(this).children().attr('alt');
+    $('.main_img>img').attr({src:imgSrc, alt:imgAlt});
+//    let index = $('li').index(this)+2;
+//    $('.main_img>img').attr({src:'images/img0'+index+'.jpg'})
+  })
+</script>
+</body>
+</html>

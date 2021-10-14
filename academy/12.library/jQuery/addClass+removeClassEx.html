@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<title>addClass(); .removeClass(); 연습</title>
+<script src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.min.js"></script>
+<style>
+  .move{
+    opacity: 1;
+    transform: translateY(0);
+  }
+  .txt{
+    position: absolute;
+
+  }
+
+  span{
+    opacity: 0;
+    color:brown;
+    text-transform: capitalize;
+    font-weight: bold;
+    transition: .4s;
+    transform: translateY(14px);
+  }
+  h2{
+    opacity: 0;
+    color:royalblue;
+    font-size: 2rem;
+    text-transform: capitalize;
+    transition: 1s .4s; /*진행시간s 대기시간s*/
+    transform: translateY(30px);
+  }
+</style>
+</head>
+
+<body>
+  <h1>.addClass(); .removeClass() 연습</h1>
+  <div class="container">
+    <div class="txt">
+      <span>about</span>
+      <h2>think & <br> solution.</h2>
+    </div>
+    <div class="txt">
+      <span>skill</span>
+      <h2>html5 & css3<br>javascript</h2>
+    </div>
+    <div class="txt">
+      <span>contact</span>
+      <h2>metemone@naver.com</h2>
+    </div>
+  </div>
+
+<script>
+  let n = 0; // 숫자로 초기화
+  function moveClass1(){
+    $('.txt').children('h2').removeClass('move');
+    $('.txt').children('span').removeClass('move');
+    $('.txt').eq(n).children('h2').addClass('move');
+    $('.txt').eq(n).children('span').addClass('move');
+    
+    if(n < 2){
+      n++;
+    } else {
+      n = 0;
+    }
+  };
+  setInterval(moveClass1, 3000);
+  
+</script>
+</body>
+</html>

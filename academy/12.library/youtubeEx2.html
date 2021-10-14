@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<title>youtube 연습 2</title>
+<!-- 평준화 css -->
+<link rel="stylesheet" href="common/normalize.css">
+<!-- YTPlayer css -->
+<link rel="stylesheet" href="common/jquery.mb.YTPlayer.min.css">
+<!-- 내가 작성한 css -->
+<link rel="stylesheet" href="youtubeEx2.css">
+
+<!-- jQuery -->
+<script src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.min.js"></script>
+<!-- YTPlayer js -->
+<script src="common/jquery.mb.YTPlayer.min.js"></script>
+<!-- 내가 작성한 js -->
+<script defer src="youtubeEx2.js"></script>
+</head>
+
+<body>
+  <div class="video_block">
+    <div class="video_ratio">
+      <div id="bgYoutube" class="player" data-property="{
+        videoURL:'https://youtu.be/2Gg6Seob5Mg',
+        containment:'.video_ratio',
+        autoPlay:true, 
+        mute:true, 
+        startAt:0, 
+        opacity:1,
+        showControls:false
+      }"></div>
+    </div>
+  </div> 
+</body>
+</html>

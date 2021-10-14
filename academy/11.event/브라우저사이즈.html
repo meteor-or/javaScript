@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<title>브라우저 사이즈</title>
+<style>
+  body { height:2000px; }
+</style>
+</head>
+
+<body>
+<script>
+  console.log('전체 창 너비:', window.innerWidth);
+  console.log('전체 창 높이:', window.innerHeight);
+  console.log('스크롤바 제외 너비:', document.documentElement.clientWidth);
+  console.log('스크롤바 제외 높이:', document.documentElement.clientHeight);
+  console.log('가로 스크롤에 의해 가려진 왼쪽 영역 너비:', window.pageXOffset);
+  console.log('세로 스크롤에 의해 가려진 위쪽 영역 높이:', window.pageYOffset);
+  console.log('가로 스크롤에 의해 가려진 왼쪽 영역 너비:', window.scrollX);
+  console.log('세로 스크롤에 의해 가려진 위쪽 영역 높이:', window.scrollY);
+  // .pageYOffset == .scrollY
+  // 브라우저간의 호환성을 위해 .pageXOffset을 좀 더 많이 사용
+</script> 
+</body>
+</html>

@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<title>addEventListner 1</title>
+<script>
+</script>
+<style>
+  input{
+    border: 1px solid #000;
+    outline: none;
+  }
+</style>
+</head>
+
+<body>
+  <label>
+    name :
+    <input type="text">
+  </label>
+  <script>
+    const input = document.querySelector('input[type=text]');
+
+    input.addEventListener('blur', () =>{
+      alert('텍스트 박스를 벗어났습니다.')
+    })
+    //화살표 함수는 간단한 함수에서만 적용. 복잡한 곳에는 사용하지 않음
+/*    input.addEventListener('focus', () =>{
+    alert('텍스트 박스를 선택하셨습니다.')
+    })*/
+  </script>
+</body>
+</html>

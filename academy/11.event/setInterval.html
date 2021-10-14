@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<title>setInterval()</title>
+</head>
+
+<body>
+<script>
+  // setInterval(function(){}, 시간); 지정 시간마다 함수 반복 실행
+  let time = setInterval(function(){
+    alert('2초마다 실행됩니다.');
+  },2000);// 2초마다 실행
+
+  // clearInterval(); setInterval() 함수 중단. 함수가 호출되지 않게 제거
+  clearInterval(time);
+</script>
+</body>
+</html>

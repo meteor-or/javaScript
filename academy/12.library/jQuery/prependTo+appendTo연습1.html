@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<title>prependTo+appendToEx1</title>
+<style>
+  ul{
+    padding: 0;
+    margin: 0;
+    list-style: none;
+  }
+
+  #box{
+    margin: 50px auto;
+    width: 300px; height: 300px;
+    font-weight: bold; font-size: 1.3rem;
+    text-align: center;
+    border: 1px solid #000;
+    color: #fff;
+    line-height: 300px;
+    overflow: hidden;
+  }
+  .box1{background-color: #6F69AC;}
+  .box2{background-color: #95DAC1;}
+  .box3{background-color: #FFEBA1;}
+  .box4{background-color: #FD6F96;}
+</style>
+<script src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.min.js"></script>
+</head>
+
+<body>
+  <ul id="box">
+    <li class="box1">box1</li>
+    <li class="box2">box2</li>
+    <li class="box3">box3</li>
+    <li class="box4">box4</li>
+  </ul>
+  
+<script>
+  function bg(){
+    
+  }
+  setInterval(() => {
+    $('li').first().appendTo('#box');
+  },1000)
+</script>
+</body>
+</html>

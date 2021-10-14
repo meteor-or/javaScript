@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<title>attr 연습 1</title>
+<link rel="stylesheet" href="../common/btn_wrap.css">
+<script src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.min.js"></script>
+</head>
+
+<body>
+  <div class="btn_wrap">
+    <div class="btn" id="btn1">이미지1</div>
+    <div class="btn" id="btn2">이미지2</div>
+  </div>
+  <img src="images/model1.jpg" alt="img1">
+
+<script>
+  $('#btn2').on('click', function(){
+    $('img').attr({src: 'images/model3.jpg', alt:'img2'});
+  });
+  $('#btn1').on('click', function(){
+    $('img').attr({src: 'images/model1.jpg', alt:'img1'});
+  });
+</script>
+</body>
+</html>

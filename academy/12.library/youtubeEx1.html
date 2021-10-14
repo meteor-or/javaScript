@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<title>youtube 연습 1</title>
+<!-- 평준화 css -->
+<link rel="stylesheet" href="../../../common/normalize.css">
+<!-- YTPlayer css -->
+<link rel="stylesheet" href="../../../common/jquery.mb.YTPlayer.min.css">
+<style>
+  header {
+    background-color:#000;
+    color:#fff;
+    height:70px;
+    text-align: center;
+    font-weight: bold;
+    font-size:2rem;
+  }
+</style>
+<!-- jQuery 파일은 모든 제이쿼리 파일 전에 작성 -->
+<script src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.min.js"></script>
+<!-- YTPlayer js -->
+<script src="../../../common/jquery.mb.YTPlayer.min.js"></script>
+<script>
+  $(function(){// 제이쿼리 문서 준비 이벤트
+    $("#youtube").YTPlayer();
+  });
+</script>
+</head>
+
+<body>
+  <!-- 
+    videoURL:'', 영상 주소
+    containment:'body', 노출 영역
+    autoPlay:true, 자동재생
+    mute:true, 음소거
+    startAt:0, 영상 시작 지점
+    opacity:1 불투명도
+   -->
+  <div id="youtube" class="player" data-property="{
+    videoURL:'https://youtu.be/2Gg6Seob5Mg',
+    containment:'body',
+    autoPlay:true,
+    mute:true, 
+    startAt:0, 
+    opacity:1
+  }"></div>
+  <div class="container">
+    <header>header</header>
+    <nav>nav</nav>
+  </div>
+</body>
+</html>

@@ -1,0 +1,50 @@
+ul {
+  list-style: none;
+  padding: 0;
+}
+
+#slider_contaier {
+  width: 100vw;
+  height: 1000px;
+}
+
+#slider_wrap {
+}
+.slider_img {
+  width: 100vw;
+  height: 100vh;
+}
+.slider1 {
+  background-image: url(images/img02.jpg);
+}
+.slider2 {
+  background-image: url(images/img03.jpg);
+}
+.slider3 {
+  background-image: url(images/img04.jpg);
+}
+.slider4 {
+  background-image: url(images/img05.jpg);
+}
+#arrow {
+  display: flex;
+  justify-content: space-around;
+  z-index: 2;
+}
+
+#slider1 {
+  background: url(images/img02.jpg);
+}
+
+#pagenation {
+  display: flex;
+  justify-content: center;
+}
+.dot {
+  margin-left: 10px;
+  width: 10px;
+  height: 10px;
+  background-color: #000;
+  border-radius: 100%;
+  font-size: 0;
+}

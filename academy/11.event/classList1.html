@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<title>제목</title>
+<style></style>
+</head>
+
+<body>
+
+  <h1 class="orange">클래스 제어</h1>
+  <div id="btn">bold</div>
+  <p>안녕하세요</p>
+
+<script>
+  //추가
+  document.body.classList.add('bg');
+  //제거
+  document.querySelector('h1').classList.remove('orange');
+
+  //.toggle(); 0,1의 반복값. on,off의 반복
+  // add()와 remove() 반복
+  const btn = document.querySelector('#btn');
+  btn.addEventListener('click',function(){
+    this.classList.toggle('bold');
+  });
+
+  const p = document.querySelector('p');
+  let bold = btn.classList.contains('bold');
+  // .contains('클래스명'); true,flase 값 반환
+  if(bold){
+    p.innerHTML = 'true / 있음';
+    p.classList.add('italic');
+  } else {
+    p.innerHTML = 'false / 없음';
+    p.classList.remove('italic');
+
+  }
+
+</script>
+
+</body>
+</html>

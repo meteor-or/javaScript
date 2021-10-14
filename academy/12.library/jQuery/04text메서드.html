@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<title>.text()</title>
+<style></style>
+<script src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.min.js"></script>
+<script>
+  $(function(){
+    const txt1 = $('#txt1').text();
+    console.log(txt1); // 텍스트 1. 문자만 반환. <em>을 반환하지 않음
+
+  $('#txt2').text('문자'); // 작성된 값으로 반환
+  })
+</script>
+</head>
+
+<body>
+  <h1>.text()</h1>
+  <h2>기준 요소의 문자를 가져오거나 수정</h2>
+  <ul>
+    <li class="color" id="txt1">텍스트 1</li>
+    <li class="color" id="txt2">텍스트 2</li>
+    <li class="color" id="txt3">텍스트 3</li>
+    <li id="txt4">텍스트 4</li>
+    <li id="txt5">텍스트 5</li>
+  </ul>
+</body>
+</html>

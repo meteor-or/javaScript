@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<title>간단 슬라이드 연습 1</title>
+<style>
+  .container {
+    border:5px solid #000;
+    width:500px; height:250px;
+    margin:30px auto;
+    position: relative;
+  }
+  ul, li { margin:0; padding:0; list-style:none; }
+  #btn_group {
+    display: flex;
+    justify-content:space-between;
+    align-items: center;
+    position: absolute;
+    top:0;
+    width:100%;
+    height:250px;
+  }
+  #btn_group li {
+    display: flex;
+    border-radius: 100%;
+    background-color:#fff;
+    color:#fff;
+    padding:10px;
+    cursor: pointer;
+    box-shadow:
+    0 2.8px 2.2px rgba(0, 0, 0, 0.02),
+    0 6.7px 5.3px rgba(0, 0, 0, 0.028),
+    0 12.5px 10px rgba(0, 0, 0, 0.035),
+    0 22.3px 17.9px rgba(0, 0, 0, 0.042),
+    0 41.8px 33.4px rgba(0, 0, 0, 0.05),
+    0 100px 80px rgba(0, 0, 0, 0.07);
+  }
+  #btn_group li img {
+    opacity: 0.5;
+  }
+  #btn_group li:hover img {
+    opacity: 1;
+  }
+</style>
+<script defer src="slideEx1.js"></script>
+</head>
+
+<body>
+  <div class="container">
+    <img src="https://via.placeholder.com/500x250/512D6D/fff?text=img1" alt="img1" id="gallery">
+    <ul id="btn_group">
+      <li id="prev">
+        <img src="img/arrow_prev.svg" alt="arrow_prev">
+      </li>
+      <li id="next">
+        <img src="img/arrow_next.svg" alt="arrow_next">
+      </li>
+    </ul>
+  </div>
+</body>
+</html>

@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<title>.toggle() 연습 1</title>
+<style>
+  body {
+    background-color: #222;
+  }
+  #mobile_btn {
+    background: url(images/bars-solid.svg) no-repeat;
+    text-indent: -9999px;
+  }
+  #gnb {
+    background-color: orange;
+    width:100px;
+    height:0;
+    line-height:1.6;
+    transition:0.3s;
+    overflow: hidden;
+  }
+  #gnb.active {
+    height:150px;
+  }
+</style>
+</head>
+
+<body>
+  <div id="mobile_btn">메뉴</div>
+  <ul id="gnb">
+    <li>menu1</li>
+    <li>menu2</li>
+    <li>menu3</li>
+    <li>menu4</li>
+    <li>menu5</li>
+  </ul>
+
+  <script>
+    const mobile_btn = document.querySelector('#mobile_btn');
+    const gnb = document.querySelector('#gnb');
+
+    function toggleMenu() {
+      gnb.classList.toggle('active');
+    }
+
+    // mobile_btn.onclick = function() {
+    //   toggleMenu();
+    // }
+    // mobile_btn.addEventListener('click', function(){
+    //   toggleMenu();
+    // });
+
+    // 이벤트 발생 시까지 대기하지 않고 바로 실행
+    // mobile_btn.addEventListener('click', toggleMenu()); 함수 호출
+
+    // 이벤트 발생까지 대기
+    mobile_btn.addEventListener('click', toggleMenu);// 함수 자체를 지정
+  </script>
+</body>
+</html>

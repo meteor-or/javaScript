@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<title>pageYOffset, scrollY</title>
+<style>
+  body { margin:0; font-weight:bold; font-size:1.6rem; text-indent:20px; }
+  .container header { background-color:orange; height:160px; width:100%; position: fixed; top:0; left:0; transition:0.5s; }
+  .container.on header {
+    background-color:maroon; color:#fff;
+    height:50px; 
+    font-size:1.2rem;
+  }
+  .container main { height: 200vh; background-color: lightblue; margin-top:160px; }
+  .container.on main { margin-top:50px; background-color: #efefef; }
+</style>
+</head>
+
+<body>
+  <div class="container">
+    <header>header</header>
+    <main>main</main>
+    <footer>footer</footer>
+  </div>
+  
+<script>
+  const container = document.querySelector('.container');
+  window.addEventListener('scroll', function() {
+    let user_scroll = window.pageYOffset;
+    let mainTop = document.querySelector('main').offsetTop;
+    console.log(mainTop);
+    if(user_scroll <= mainTop {
+      container.classList.remove('on');
+    } else if (user_scroll > mainTop) {
+      container.classList.add('on');
+    }
+
+  });
+</script>
+</body>
+</html>

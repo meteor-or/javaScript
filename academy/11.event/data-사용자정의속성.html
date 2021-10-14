@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<title>data- 사용자 정의 속성</title>
+<style>
+</style>
+</head>
+
+<body>
+  <!-- 
+    html :
+     data- 사용자 정의 속성
+      ex) data-name, data-bg, data-number, ...
+
+    js : 
+      .dataset; 사용자 정의 속서에 접근 가능  
+   -->
+  <ul>
+    <li><a href="#" data-color="orange">menu1</a></li>
+    <li><a href="#" data-color="maroon">menu2</a></li>
+    <li><a href="#" data-color="teal">menu3</a></li>
+    <li><a href="#" data-color="orangered">menu4</a></li>
+    <li><a href="#" data-color="salmon">menu5</a></li>
+    <li><a href="#" data-color="lightblue">menu6</a></li>
+  </ul>
+
+<script>
+  const a = document.querySelectorAll('a');
+  for(let idx of a) {
+    console.log(idx.dataset.color);
+    let aColor = idx.dataset.color;
+    idx.style.color = aColor;
+  }
+</script>  
+</body>
+</html>

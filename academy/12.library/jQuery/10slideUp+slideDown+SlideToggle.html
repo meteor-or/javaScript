@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<title>slideUp+slideToggle</title>
+<!-- jQuery -->
+<style>
+  #box{
+    width: 500px;
+    height: 300px;
+    background-color: orange;
+  }
+  .btn_wrap{
+    display: flex;
+  }
+  .btn{
+    cursor: pointer;
+    border: 1px solid #000;
+    margin-right: 40px;
+  }
+  p{
+    margin: 0;
+  }
+</style>
+<script src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.min.js"></script>
+<!-- 내가 작성한 js문서는 반드시 제일 마지막에 작성 -->
+<!-- <script defer src="traversing.js"></script> -->
+</head>
+
+<body>
+<div class="btn_wrap">
+  <div class="btn" id="btn1">slideUp()</div>
+  <div class="btn" id="btn2">slideDonw()</div>
+  <div class="btn" id="btn3">slideToggle()</div>
+</div>
+<div id="box">
+  <p>slideUp() 서서히 올라감</p>
+  <p>slideDonw() 서서히 내려감</p>
+  <p>slideToggle() UP DOWN 반복</p>
+</div>
+<script>
+  
+  $('#btn1').on('click',function(){
+    $('#box').slideUp(); // == display:none;
+  });
+  $('#btn2').on('click',function(){
+    $('#box').slideDown('fast'); // == display:block;
+  });
+  $('#btn3').on('click',function(){
+    $('#box').slideToggle(); // == display:none;
+
+  });
+</script>
+</body>
+</html>

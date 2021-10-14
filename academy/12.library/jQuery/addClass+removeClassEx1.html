@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<title>.addClass(); .removeClass(); 연습 1</title>
+<style>
+  body { margin:0; text-transform: capitalize; font-weight: bold; }
+  #gnb {
+    list-style: none;
+    margin:0; padding:0;
+    display:flex;
+    justify-content: space-around;
+    border-bottom:1px solid #000;
+  }
+  #gnb a {
+    text-decoration: none;
+    color:#000;
+    display: block;
+    padding:10px;
+    position: relative;
+  }
+  a.active::after {
+    content:"";
+    width:0; height:6px;
+    background-color: rgba(128, 0, 0,0.8);
+    position: absolute;
+    bottom:11px;
+    left:0; right:0;
+    animation:line .5s forwards;
+  }
+  @keyframes line {
+    100% {
+      width:100%;
+    }
+  }
+</style>
+<script src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.min.js"></script>
+</head>
+
+<body>
+  <ul id="gnb">
+    <li><a href="#">menu 1</a></li>
+    <li><a href="#">menu 2</a></li>
+    <li><a href="#">menu 3</a></li>
+    <li><a href="#">menu 4</a></li>
+  </ul>
+<script>
+  $('li').hover(function(){// 마우스를 올렸을 때
+    $(this).find('a').addClass('active');
+  }, function(){// 마우스가 벗어났을 때
+    $(this).find('a').removeClass('active');
+  });
+</script>  
+</body>
+</html>

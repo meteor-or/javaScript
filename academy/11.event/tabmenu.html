@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<title>tab menu</title>
+<style>
+  #tab_menu {
+    font-size:1.2rem;
+    list-style:none;
+    margin:50px auto;
+    padding:0;
+    padding-top:64px;
+    width:599px;
+    position: relative;
+  }
+  /* 각 영역의 제목 */
+  #tab_menu .tab_btn {
+    margin:0;
+    position: absolute;
+    top:0;
+  }
+  #tab_menu #tab1 .tab_btn { left:0; }
+  #tab_menu #tab2 .tab_btn { left:200px; }
+  #tab_menu #tab3 .tab_btn { left:400px; }
+
+  #tab_menu .tab_btn a {
+    display:block;
+    background-color: #6ec4fd;
+    text-decoration:none;
+    color:#000;
+    text-align: center;
+    width:199px; height:64px;
+    margin-right:1px;
+    box-sizing: border-box;
+    padding:10px;
+    border-radius:24px 24px 0 0;
+  }
+  /* 각 영역의 문단 */
+  #tab_menu p {
+    margin:0;
+    height:170px;
+    box-sizing:border-box;
+    padding:20px 20px 0;
+    display:none;
+  }
+  #tab_menu li.on p, #tab_menu li.on a {
+    background-color:#3DB2FF;
+    display: block;
+  }
+  #tab_menu p strong {
+    display:block;
+    margin:10px 0 5px;
+  }
+</style>
+</head>
+
+<body>
+  <ul id="tab_menu">
+    <li id="tab1" class="on">
+      <h2 class="tab_btn"><a href="#">html5</a></h2>
+      <p>
+        <strong>html5 Tutorial</strong>
+        <span>얼음 인생을 오아이스도 풀밭에 풍부하게 인생을 위하여서. 그들은 가슴에 너의 것은 못하다 투명하되 듣는다. 같은 예수는 밝은 있는 청춘의 보라. 싸인 그것을 불러 천하를 그리하였는가?</span>
+      </p>
+    </li>
+    <li id="tab2">
+      <h2 class="tab_btn"><a href="#">css3</a></h2>
+      <p>
+        <strong>css3 Tutorial</strong>
+        <span>힘차게 동산에는 노래하며 살 위하여서. 수 이상, 석가는 이상을 그것을 영원히 밝은 피고 보라. 노래하며 눈이 행복스럽고 얼마나 길지 위하여 운다. 속에서 두기 것이 어디 없으면, 하여도 칼이다.</span>
+      </p>
+    </li>
+    <li id="tab3">
+      <h2 class="tab_btn"><a href="#">javascript</a></h2>
+      <p>
+        <strong>JS Tutorial</strong>
+        <span>원대하고, 커다란 싹이 미묘한 타오르고 그들은 있는 이것이다. 모래뿐일 피고, 가지에 가치를 우리 하는 속에서 얼마나 칼이다. 따뜻한 것은 주며, 따뜻한 것이다.</span>
+      </p>
+    </li>
+  </ul>
+<script>
+  const tab_btn = document.querySelectorAll('.tab_btn');
+  const li = document.querySelectorAll('li');
+  
+  tab_btn.forEach(function(item) {
+    item.addEventListener('click', function() {
+      for(let idx of li) {
+        idx.classList.remove('on');
+      }
+      this.parentNode.classList.add('on');
+    });
+  });
+</script>  
+</body>
+</html>

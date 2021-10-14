@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<title>attr 연습 2</title>
+<link rel="stylesheet" href="../common/btn_wrap.css">
+<style>
+  p { border:6px solid #000; padding:6px; font-weight: bold; font-size:1.3rem; width:540px;}
+</style>
+<script src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.min.js"></script>
+</head>
+
+<body>
+  <div class="btn_wrap">
+    <div class="btn" id="btn1">경로 확인</div>
+    <div class="btn" id="btn2">대체 텍스트</div>
+    <div class="btn" id="btn3">가로값</div>
+  </div>
+  <img src="images/model1.jpg" alt="모델 이미지">
+  <p>이 곳에 출력됩니다.</p>
+  
+<script>
+  $('#btn1').on('click',function(){
+    let src = $('img').attr('src');// img 속성 중 src의 값을 가져옴
+    $('p').text(src).css({backgroundColor:'orange'});
+  });
+  $('#btn2').on('click',function(){
+    let alt = $('img').attr('alt');
+    $('p').text(alt).css({backgroundColor:'blue',color:'#fff'});
+  });
+  $('#btn3').on('click',function(){
+    // img가 가진 속성 중 width 속성이 존재하지 않기 때문에 불러오지 못함.
+    let wt = $('img').attr('width');
+    $('p').text(wt);
+  });
+</script>  
+</body>
+</html>

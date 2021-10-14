@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<title>vegas 플러그인 연습</title>
+<!-- 평준화 css -->
+<link rel="stylesheet" href="common/normalize.css">
+<!-- vegas css -->
+<link rel="stylesheet" href="vegas.min.css">
+<style>
+  header {
+    background-color:maroon;
+    height:70px;
+    color:#fff;
+    font-weight: bold;
+    font-size:2rem;
+  }
+  main {
+    font-weight: bold;
+    font-size:2rem;
+    width:80vw;
+    height:50vh;
+    margin:50px auto;
+    border:6px solid #000;
+  }
+</style>
+<!-- jQuery -->
+<script src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.min.js"></script>
+<!-- vegas js -->
+<script src="vegas.min.js"></script>
+</head>
+
+<body>
+  <header>header</header>
+  <main>main</main>
+<script>
+  $("body").vegas({
+    slides: [
+        { src: "images/img02.jpg" },
+        { src: "images/img03.jpg" },
+        { src: "images/img04.jpg" },
+        { src: "images/ocean.jpg" }
+    ]
+  });
+</script> 
+</body>
+</html>

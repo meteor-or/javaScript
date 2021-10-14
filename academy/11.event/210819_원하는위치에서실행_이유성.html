@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<title>제목</title>
+<style>
+  body {
+    font-size: 2rem;
+  }
+  
+  .box {
+    background-color: aquamarine;
+    height: 200vh;
+  }
+
+  #banner{
+    background-color: #fff;
+    position: fixed;
+    bottom: 100px;
+    width: 300px;
+    height: 100px;
+    line-height: 100px;
+    z-index: 999;
+    right:-300px;
+  }
+  #banner.sliding { 
+    right: 0;
+  }
+  footer{
+    background-color: aqua;
+  }
+
+</style>
+</head>
+
+<body>
+
+  <h1>원하는 위치에서 실행</h1>
+  <div class="box">
+    컨텐츠 영역입니다.
+  </div>
+  <footer>
+    footer
+  </footer>
+
+  <div id="banner">짠!</div>
+  <script>
+    const banner = document.querySelector("#banner");
+    const footer = document.querySelector('footer');
+
+    addEventListener('scroll', () => {
+      let userScroll = window.pageYOffset;
+      console.log(userScroll);
+    
+      let objHeight = footer.offsetTop - window.innerHeight;
+      console.log(objHeight);
+      if (userScroll >= objHeight){ //배너보임
+        banner.classList.add('sliding');
+      } else if (userScroll < objHeight) { //배너 숨김
+        banner.classList.remove('sliding')
+      }
+    })
+  </script>
+</body>
+</html>

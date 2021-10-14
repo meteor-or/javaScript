@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<title>setinterval()연습</title>
+<style>
+  body{
+    margin: 0;
+  }
+  .wrap {
+    width: 100vw;
+    height: 100vh;
+    background-color: black;
+    color: #fff;
+    
+  }
+  .wrap.active{
+    background-color: gray;
+  }
+  .time{
+    margin: 0;
+    font-size: 64px;
+    text-align: center;
+  }
+</style>
+</head>
+
+<body>
+  <div class="wrap">
+    <h1 class="time"></h1>
+  </div>
+</body>
+
+<script>
+  const wrap = document.querySelector('.wrap')
+  const time = document.querySelector('.time')
+
+  function printtime(){
+    let today = new Date();
+    let hh = today.getHours();
+    let mm = today.getMinutes();
+    let ss = today.getSeconds();
+    time.innerHTML = hh + ":" + mm + ":" + ss;
+  }
+  function chagneBg(){
+    wrap.classList.toggle('active')
+  }
+  setInterval(printtime,1000);
+  setInterval(chagneBg,1000);
+
+</script>
+</html>

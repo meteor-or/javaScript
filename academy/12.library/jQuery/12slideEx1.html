@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<title>slide 메서드 연습 1</title>
+<style>
+  body { margin:0; font-size:1.25rem; text-transform: capitalize; }
+  #lnb {
+    list-style: none;
+    margin:0; padding:0;
+    width:300px;
+  }
+  #lnb h3 {
+    margin:0; padding:6px 8px;
+    background-color:rgba(2, 62, 138,0.9);
+    color:#fff;
+    cursor: pointer;
+    border-bottom:1px solid rgba(255,255,255,0.7);
+  }
+  #lnb h3:hover {
+    background-color:#023e8a;
+  }
+  #lnb p {
+    margin:0;
+    padding:10px 10px 30px;
+    background-color: #efefef;
+    display:none;
+  }
+</style>
+<script src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.min.js"></script>
+</head>
+
+<body>
+  <ul id="lnb">
+    <li class="box">
+      <h3>menu 1</h3>
+      <p>다하지 그리워 했던 가슴속에 못 있습니다. 피어나듯이 프랑시스 별 별이 추억과 벌써 아침이 봅니다. 까닭이요, 시와 같이 한 덮어 버리었습니다. 별 다 별 언덕 소학교 가난한 많은 추억과 속의 있습니다</p>
+    </li>
+    <li class="box">
+      <h3>menu 2</h3>
+      <p>어머니 새겨지는 같이 새워 부끄러운 내린 봅니다. 나는 속의 사람들의 가을로 아이들의 가슴속에 이런 아무 내 계십니다. 아이들의 소학교 많은 겨울이 별을 무덤 슬퍼하는 지나고 언덕 있습니다. 부끄러운 동경과 이름을 별 벌레는 까닭입니다.</p>
+    </li>
+    <li class="box">
+      <h3>menu 3</h3>
+      <p>어머니 새겨지는 같이 새워 부끄러운 내린 봅니다. 나는 속의 사람들의 가을로 아이들의 가슴속에 이런 아무 내 계십니다. 아이들의 소학교 많은 겨울이 별을 무덤 슬퍼하는 지나고 언덕 있습니다. 부끄러운 동경과 이름을 별 벌레는 까닭입니다.</p>
+    </li>
+    <li class="box">
+      <h3>menu 4</h3>
+      <p>LOREM IPSUM IS SIMPLY DUMMY TEXT OF THE PRINTING AND TYPESETTING INDUSTRY.</p>
+    </li>
+  </ul>
+<script>
+  /*
+  $('#lnb .box').eq(0).children('h3').on('click',function(){
+    $('#lnb .box').eq(0).children('p').slideDown();
+    $('#lnb .box').eq(1).children('p').slideUp();
+    $('#lnb .box').eq(2).children('p').slideUp();
+    $('#lnb .box').eq(3).children('p').slideUp();
+  });
+  $('#lnb .box').eq(1).children('h3').on('click',function(){
+    $('#lnb .box').eq(0).children('p').slideUp();
+    $('#lnb .box').eq(1).children('p').slideToggle();
+  });
+  */
+
+  $('#lnb h3').on('click',function(){
+    // 내가 클릭한 그 h3
+    $(this).next().slideToggle();
+    $(this).parent().siblings().children('p').slideUp();
+  });
+</script>
+</body>
+</html>
